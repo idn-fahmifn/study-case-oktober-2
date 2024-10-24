@@ -12,7 +12,8 @@ class KategoriController extends Controller
      */
     public function index()
     {
-        return view('kategori.index');
+        $data = Kategori::all();
+        return view('kategori.index', compact('data'));
     }
 
     /**
@@ -36,9 +37,10 @@ class KategoriController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Kategori $kategori)
+    public function show($id)
     {
-        //
+        $data = Kategori::find($id);
+        return view('kategori.detail', compact('data'));
     }
 
     /**

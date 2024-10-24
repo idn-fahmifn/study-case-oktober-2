@@ -1,68 +1,42 @@
 @extends('template.template')
 
-<!-- Memberi nama untuk halaman kategori -->
-
 @section('page-title')
-Halaman Kategori
+Detail Kategori
 @endsection
 
-<!-- End penamaan halaman kategori -->
-
-<!-- Bagian Konten dari halaman Kategori -->
 @section('content')
 <div class="row">
     <div class="col-md-12">
         <div class="card">
-            <div class="card-body">
-                <h5 class="header-title">Kategori Produk</h5>
-                <p class="text-muted">Data produk berdasarkan kategori</p>
-
-                <!-- button modals -->
-                <button type="button" class="btn btn-primary mb-3" data-toggle="modal" data-target="#exampleModalform2">
-                    Tambah Baru
-                </button>
-
-                <!-- Alert -->
-                
-                @if (session('success'))
-                <div class="alert alert-success alert-dismissible fade show" role="alert">
-                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                    <strong>Yeay!</strong> {{session('success')}}.
-                </div>
-                @endif
-
-                
-
-                <!-- End of alert -->
-
-                <!-- Area tabel -->
-                <div class="table-responsive">
-                    <table id="datatable-buttons" class="table table-striped">
-                        <thead>
-                            <th>Nama Kategori</th>
+            <div class="card-body p-3">
+                <h5 class="header-title">
+                    {{$data->nama_kategori}}
+                </h5>
+                <!-- bagian tabel -->
+                <div class="table-responsive p-3">
+                    <table class="table table-bordered">
+                        <tr>
+                            <th style="width: 30%;">Nama Kategori</th>
+                            <td>{{$data->nama_kategori}}</td>
+                        </tr>
+                        <tr>
                             <th>Kode Unik</th>
-                        </thead>
-                        <tbody>
-
-                            <!-- loop  -->
-                            @foreach ($data as $item)
-                            <tr>
-                                <td><a href="#" class="btn">{{$item->nama_kategori}}</a></td>
-                                <td>{{$item->kode_unik}}</td>
-                            </tr>
-                            @endforeach
-
-                        </tbody>
+                            <td>{{$data->kode_unik}}</td>
+                        </tr>
                     </table>
-                </div>
 
+                    <form action="" method="post">
+                        @csrf
+                        <a href="" class="btn text-primary">Edit</a>
+                        <button type="submit" class="btn text-danger">Hapus</button>
+                    </form>
+                </div>
             </div>
         </div>
     </div>
 </div>
 
+<!-- modal -->
 <div class="modal fade" id="exampleModalform2" tabindex="-1" role="dialog">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
@@ -99,4 +73,3 @@ Halaman Kategori
     </div>
 </div>
 @endsection
-<!-- end halaman konten. -->
