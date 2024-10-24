@@ -107,7 +107,8 @@ Halaman Produk
                         </div>
                         <div class="col-md-12">
                             <div class="form-group">
-                                
+                                <label>Deskripsi Produk</label>
+                                <textarea name="deskripsi" id="" class="summernote"></textarea>
                             </div>
                         </div>
                     </div>
