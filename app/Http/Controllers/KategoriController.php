@@ -54,16 +54,22 @@ class KategoriController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Kategori $kategori)
+    public function update(Request $request, $id)
     {
-        //
+        $data = Kategori::find($id);
+        $input = $request->all();
+        $data->update($input);
+
+        return back()->with('success', 'Kategori berhasil diubah');
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Kategori $kategori)
+    public function destroy($id)
     {
-        //
+        $data = Kategori::find($id);
+        $data->delete();
+        return redirect()->route('kategori.index')->with('success', 'Data berhasil dihapus');
     }
 }

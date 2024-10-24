@@ -27,6 +27,13 @@
     <!-- Animation modals -->
     <link href="{{asset('assets/plugins/animate/animate.css')}}" rel="stylesheet" type="text/css">
 
+    <!-- Summernotes -->
+    <link href="{{asset('assets/plugins/summernote/summernote-bs4.css')}}" rel="stylesheet" />
+
+    <!-- dropzone file upload -->
+    <link href="{{asset('assets/plugins/dropzone/dist/dropzone.css')}}" rel="stylesheet" type="text/css">
+    <link href="{{asset('assets/plugins/dropify/css/dropify.min.css')}}" rel="stylesheet">
+
 </head>
 
 
@@ -266,6 +273,15 @@
 
     <!-- Animation Modals -->
     <script src="{{asset('assets/pages/modal-animation.init.js')}}"></script>
+
+    <!-- Summernotes -->
+    <script src="{{asset('assets/plugins/summernote/summernote-bs4.min.js')}}"></script>
+    <script src="{{asset('assets/pages/summernote.init.js')}}"></script>
+
+    <!-- Dropzone -->
+    <script src="{{asset('assets/plugins/dropzone/dist/dropzone.js')}}"></script>
+    <script src="{{asset('assets/plugins/dropify/js/dropify.min.js')}}"></script>
+    <script src="{{asset('assets/pages/upload.init.js')}}"></script>
 
 
 

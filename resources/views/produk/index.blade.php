@@ -3,7 +3,7 @@
 <!-- Memberi nama untuk halaman kategori -->
 
 @section('page-title')
-Halaman Kategori
+Halaman Produk
 @endsection
 
 <!-- End penamaan halaman kategori -->
@@ -14,8 +14,8 @@ Halaman Kategori
     <div class="col-md-12">
         <div class="card">
             <div class="card-body">
-                <h5 class="header-title">Kategori Produk</h5>
-                <p class="text-muted">Data produk berdasarkan kategori</p>
+                <h5 class="header-title">Data Semua Produk</h5>
+                <p class="text-muted">Menampilkan seluruh data produk</p>
 
                 <!-- button modals -->
                 <button type="button" class="btn btn-primary mb-3" data-toggle="modal" data-target="#exampleModalform2">
@@ -41,8 +41,9 @@ Halaman Kategori
                 <div class="table-responsive">
                     <table id="datatable-buttons" class="table table-striped">
                         <thead>
-                            <th>Nama Kategori</th>
-                            <th>Kode Unik</th>
+                            <th>Nama Produk</th>
+                            <th>Harga</th>
+                            <th>Kategori Produk</th>
                         </thead>
                         <tbody>
                             <!-- loop  -->
@@ -67,7 +68,7 @@ Halaman Kategori
             <form action="{{route('kategori.store')}}" method="post">
                 @csrf
                 <div class="modal-header">
-                    <h5 class="modal-title">Tambah Kategori Baru</h5>
+                    <h5 class="modal-title">Tambah Produk</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
@@ -76,14 +77,37 @@ Halaman Kategori
                     <div class="row">
                         <div class="col-md-6">
                             <div class="form-group">
-                                <label for="field-1" class="control-label">Nama Kategori</label>
-                                <input type="text" class="form-control" name="nama_kategori" required id="field-1" placeholder="Elekrtronik">
+                                <label for="field-1" class="control-label">Nama Produk</label>
+                                <input type="text" class="form-control" name="nama_produk" required id="field-1" placeholder="Wiskas">
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="form-group">
-                                <label for="field-2" class="control-label">Kode Unik</label>
-                                <input type="text" class="form-control" name="kode_unik" required id="field-2" placeholder="EL-1">
+                                <label for="field-2" class="control-label">Harga</label>
+                                <input type="number" class="form-control" name="harga" required id="field-2" placeholder="20000">
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label for="field-2" class="control-label">Expired (Kosongkan jika no-expiration)</label>
+                                <input type="date" class="form-control" name="expired" required id="field-3">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="field-2" class="control-label">Stok</label>
+                                <input type="number" class="form-control" name="expired" required id="field-4">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="field-2" class="control-label">link</label>
+                                <input type="text" class="form-control" name="expired" placeholder="https://produksaya.com/produk" required id="field-4">
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                
                             </div>
                         </div>
                     </div>
